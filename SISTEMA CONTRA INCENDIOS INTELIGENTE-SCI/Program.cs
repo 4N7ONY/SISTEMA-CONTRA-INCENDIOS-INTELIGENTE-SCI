@@ -33,7 +33,7 @@ namespace PROYECTO
                 Console.WriteLine("[2] Mostrar Leyenda de estado de Temperaturas");
                 Console.WriteLine("[3] Ejecutar monitoreo de temperatura");
                 Console.WriteLine("[4] Restablecer sistema");
-                Console.WriteLine("[5] Ver historial de monitoreo");
+                Console.WriteLine("[5] Ver historial");
                 Console.WriteLine("[0] Salir");
                 Console.Write("\nSeleccione una opción: ");
                 opcion = int.Parse(Console.ReadLine());
