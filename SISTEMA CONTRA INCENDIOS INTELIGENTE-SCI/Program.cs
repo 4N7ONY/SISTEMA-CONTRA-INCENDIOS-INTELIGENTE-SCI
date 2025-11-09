@@ -119,7 +119,7 @@ namespace PROYECTO
                                 Console.ResetColor();
                             }
                             Console.WriteLine("═════════════════════════════════════════");
-                            Thread.Sleep(1000);
+                            Thread.Sleep(6000);
                         }
                         while (Console.KeyAvailable)
                             Console.ReadKey(true);
