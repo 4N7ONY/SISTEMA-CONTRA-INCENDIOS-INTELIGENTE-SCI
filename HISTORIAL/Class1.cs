@@ -77,9 +77,9 @@ namespace HISTORIAL
 
         private static string DeterminarEstado(double temp, int humo)
         {
-            if (temp > 120 || humo >= 15)
+            if (temp > 180 || humo >= 15)
                 return "EMERGENCIA";
-            else if (temp > 110 || humo >= 10)
+            else if (temp > 170 || humo >= 10)
                 return "ALERTA";
             else
                 return "SEGURO";

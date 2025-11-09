@@ -50,9 +50,9 @@ namespace PROYECTO
                         Console.ResetColor();
                         Console.WriteLine("═════════════════════════════════════════\n");
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine(" Verde  → Temperatura estable (0°C - 120°C)");
+                        Console.WriteLine(" Verde  → Temperatura estable (0°C - 180°C)");
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(" Rojo   → Temperatura crítica (121°C o más)");
+                        Console.WriteLine(" Rojo   → Temperatura crítica (181°C o más)");
                         Console.ResetColor();
                         Console.WriteLine("\n═════════════════════════════════════════");
                         Console.WriteLine();
@@ -110,7 +110,7 @@ namespace PROYECTO
                             HistorialData.AgregarDato(zona4, s4, h4);
                             Console.WriteLine("\n═════════════════════════════════════════");
 
-                            if (s1 > 120 || s2 > 120 || s3 > 120 || s4 > 120)
+                            if (s1 > 180 || s2 > 180 || s3 > 180 || s4 > 180)
                             { EmergenciaFuego(s1, s2, s3, s4, h1, h2, h3, h4); }
                             else
                             {
@@ -214,10 +214,10 @@ namespace PROYECTO
 
         static void MostrarZonasCriticas(double s1, double s2, double s3, double s4, int h1, int h2, int h3, int h4)
         {
-            if (s1 > 120) Console.WriteLine("Zona 1 (Generador principal) crítica");
-            if (s2 > 120) Console.WriteLine("Zona 2 (Sala de control) crítica");
-            if (s3 > 120) Console.WriteLine("Zona 3 (Almacén combustible) crítica");
-            if (s4 > 120) Console.WriteLine("Zona 4 (Transformadores) crítica");
+            if (s1 > 180) Console.WriteLine("Zona 1 (Generador principal) crítica");
+            if (s2 > 180) Console.WriteLine("Zona 2 (Sala de control) crítica");
+            if (s3 > 180) Console.WriteLine("Zona 3 (Almacén combustible) crítica");
+            if (s4 > 180) Console.WriteLine("Zona 4 (Transformadores) crítica");
         }
         static void SonidoAlarma()
         {
@@ -226,7 +226,7 @@ namespace PROYECTO
             Console.WriteLine("\nLuces estroboscópicas: ACTIVADAS ");
             Console.WriteLine("Rociadores de agua: ACTIVADOS ");
             Console.WriteLine("Alarma: Activada");
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
             Console.WriteLine("Evacuar Zona!!!");
             Console.ResetColor();
             for (int i = 0; i < 1; i++)
@@ -262,7 +262,7 @@ namespace PROYECTO
         }
         static void MostrarTemperaturaZona(string zona, double temp)
         {
-            if (temp <= 120) Console.ForegroundColor = ConsoleColor.Green;
+            if (temp <= 180) Console.ForegroundColor = ConsoleColor.Green;
             else Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(zona + ": " + temp + "°C");
             Console.ResetColor();
@@ -276,7 +276,7 @@ namespace PROYECTO
             Console.ResetColor();
 
             // Mostrar Temperatura
-            if (temperatura > 120)
+            if (temperatura > 180)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write(" Alta temperatura  ");
